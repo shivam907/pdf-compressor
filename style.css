@@ -78,10 +78,12 @@ nav ul ion-icon {
 }
 
 .content {
+  width: 120rem;
+  margin: 0 auto;
   padding-top: 17.5rem;
   padding-bottom: 8rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .cont {
@@ -365,4 +367,143 @@ input::placeholder {
   margin-bottom: 5rem;
   text-align: center;
   font-size: 2.4rem;
+}
+
+.pdfCompressor {
+  width: 120rem;
+  margin: 10rem auto;
+}
+#dropFileForm {
+  margin: 16px;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+#dropFileForm #fileLabel {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(0, 255, , 0.5); */
+  border: 2px dotted #00000030;
+  /* display: block; */
+  padding: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+#dropFileForm #fileInput {
+  display: none;
+}
+
+#dropFileForm #fileLabel:after,
+#dropFileForm #fileLabel:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: -2;
+  border-radius: 8px 8px 0 0;
+}
+
+#dropFileForm #fileLabel:before {
+  z-index: -1;
+  /* background: repeating-linear-gradient( */
+  /* 45deg,
+    transparent,
+    transparent 5%,
+    black 5%,
+    black 10%
+  ); */
+  background-color: #00000030;
+  /* border: solid; */
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#dropFileForm.fileHover #fileLabel:before {
+  opacity: 0.25;
+}
+#dropFileForm.fileHover #fileLabel {
+  border: 2px solid #00000090;
+  opacity: 0.25;
+}
+
+#dropFileForm .uploadButton {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 8px;
+  background-color: limeGreen;
+  color: #fff;
+  cursor: pointer;
+}
+
+#dropFileForm.fileHover {
+  /* border: solid; */
+  /* box-shadow: 0 0 16px limeGreen; */
+}
+#fileLabelText {
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #00000090;
+  /* height: 100%; */
+  /* margin: auto 0; */
+  /* position: absolute; */
+  /* top: 45%; */
+  /* left: 40%; */
+  text-align: center;
+}
+
+.convert {
+  position: absolute;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  font-size: 1.5rem;
+  bottom: 3rem;
+}
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.2rem solid lightgray;
+  border-top-color: gray;
+  animation: Rotate 1.2s linear 0s infinite forwards;
+}
+
+.convert p {
+  color: #777;
+  font-size: 2rem;
+}
+.op {
+  opacity: 0;
+}
+
+.uploadButton {
+  font-size: 2rem;
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+  z-index: 99;
+}
+.uploadButton:hover {
+  color: #fff;
+  background-color: rgb(35, 143, 35) !important;
+  transition: all 0.1s ease-in-out;
+}
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

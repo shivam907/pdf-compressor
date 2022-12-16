@@ -41,22 +41,54 @@
     <div class="hero">
       <div class="content">
         <div class="cont">
-          <h1>Website Designing And Development Cost Calculator</h1>
-          <p>
-            Free tool for website design and development cost calculator,
-            calculate how much your website will cost!
-          </p>
+          <h1>PDF Compressor</h1>
+          <p>Free tool for compressing your heavy pdf file into lighter one</p>
         </div>
         <div class="cont2">
           <a href="">Home</a>
           <p>/</p>
-          <a href="">Cost Calculator</a>
+          <a href="">PDF Compressor</a>
         </div>
       </div>
     </div>
     <div class="pdfCompressor">
-      <input type="file" name="" id="input" />
-      <button class="files">Submit</button>
+      <!-- <div id="dropContainer" style="border: 1px solid black; height: 25rem">
+        Drop Here
+      </div> -->
+      <form id="dropFileForm" onsubmit="uploadFiles(event)">
+        <input
+          type="file"
+          name="files[]"
+          id="fileInput"
+          required
+          onchange="addFiles(event)"
+        />
+
+        <label
+          for="fileInput"
+          id="fileLabel"
+          ondragover="overrideDefault(event);fileHover();"
+          ondragenter="overrideDefault(event);fileHover();"
+          ondragleave="overrideDefault(event);fileHoverEnd();"
+          ondrop="overrideDefault(event);fileHoverEnd();
+        addFiles(event);"
+        >
+          <!-- <i class="fa fa-download fa-5x"></i> -->
+          <!-- <br /> -->
+          <span id="fileLabelText"> Choose a file or drag it here </span>
+          <!-- <br /> -->
+          <div class="convert op">
+            <p>Converting</p>
+            <div class="spinner rounded-circle"></div>
+          </div>
+          <!-- <span id="uploadStatus"></span> -->
+        </label>
+
+        <button class="uploadButton">Compress</button>
+      </form>
+      <!-- <input type="file" name="" id="input" />
+
+      <button class="files">Submit</button> -->
     </div>
     <!-- <div class="space"></div> -->
     <script src="script.js"></script>
