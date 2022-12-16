@@ -55,14 +55,8 @@
       <!-- <div id="dropContainer" style="border: 1px solid black; height: 25rem">
         Drop Here
       </div> -->
-      <form id="dropFileForm" onsubmit="uploadFiles(event)">
-        <input
-          type="file"
-          name="files[]"
-          id="fileInput"
-          required
-          onchange="addFiles(event)"
-        />
+      <form id="dropFileForm">
+        <input type="file" name="files[]" id="fileInput" />
 
         <label
           for="fileInput"
@@ -84,7 +78,9 @@
           <!-- <span id="uploadStatus"></span> -->
         </label>
 
-        <button class="uploadButton">Compress</button>
+        <button class="uploadButton" onclick="uploadFiles(event)">
+          Compress
+        </button>
       </form>
       <!-- <input type="file" name="" id="input" />
 

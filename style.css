@@ -396,9 +396,9 @@ input::placeholder {
   cursor: pointer;
 }
 
-#dropFileForm #fileInput {
+/* #dropFileForm #fileInput {
   display: none;
-}
+} */
 
 #dropFileForm #fileLabel:after,
 #dropFileForm #fileLabel:before {
@@ -506,4 +506,21 @@ input::placeholder {
   100% {
     transform: rotate(360deg);
   }
+}
+input {
+  position: absolute;
+  border: 1px solid #92b0b3;
+  background: #f1f1f1;
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  /* padding: 100px 0px 100px 250px; */
+  padding: 10rem;
+  display: flex;
+  z-index: 999999999999;
+  opacity: 0;
+  cursor: pointer;
+  /* align-items: center;
+  justify-content: center; */
+  text-align: center !important;
+  width: 117rem;
 }
