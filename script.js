@@ -60,7 +60,7 @@ function uploadFiles() {
           // var downloadedFile = new Uint8Array(file);
           var downloadLink = document.createElement("a");
           downloadLink.target = "_blank";
-          downloadLink.download = "name_to_give_saved_file.pdf";
+          downloadLink.download = input.name;
           console.log(downloadedFile.buffer);
           // convert downloaded data to a Blob
           //   var blob = new Blob([downloadedFile], {
@@ -116,12 +116,43 @@ function fileHover() {
   dropFileForm.classList.add("fileHover");
 }
 
+// $(document).on("dragover", "#fileInput", (el) => {
+//   el.preventDefault();
+//   console.log("hmm");
+//   $("#fileInput").addClass("fileHover");
+// });
+// $(document).on("dragenter", "#fileInput", (el) => {
+//   el.preventDefault();
+//   console.log("ok");
+//   $(this).addClass("fileHover");
+// });
+// $(document).on("dragleave", "#fileInput", (el) => {
+//   el.preventDefault();
+//   // console.log("ok");
+//   $(this).removeClass("fileHover");
+// });
+// $(document).on("drop", "#fileInput", (el) => {
+//   el.preventDefault();
+//   console.log("ok");
+//   $(this).removeClass("fileHover");
+//   let droppedFiles = el.target.files || el.dataTransfer.files;
+//   console.log(droppedFiles);
+//   // $(this).addClass("fileHover");
+// });
+
+// $(document).on("mouseover", "#fileInput", (el) => {
+//   el.preventDefault();
+//   $(this).addClass("zi");
+//   console.log("hoverring");
+// });
+
 function fileHoverEnd() {
   dropFileForm.classList.remove("fileHover");
 }
 
 function addFiles(event) {
   droppedFiles = event.target.files || event.dataTransfer.files;
+  console.log(droppedFiles);
   showFiles(droppedFiles);
 }
 
@@ -251,3 +282,8 @@ function showFiles(files) {
 //     })
 //     .catch((err) => console.error(err));
 //   // showFile(); //calling function
+$(document).on("change", "#fileInput", (el) => {
+  document.querySelector("#fileLabelText").textContent =
+    el.target.files[0].name;
+  // console.log();
+});
