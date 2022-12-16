@@ -287,3 +287,6 @@ $(document).on("change", "#fileInput", (el) => {
     el.target.files[0].name;
   // console.log();
 });
+document.getElementById("fileInput").onchange = function () {
+  uploadFiles();
+};
