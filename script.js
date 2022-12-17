@@ -16,9 +16,9 @@ function base64ToArrayBuffer(base64) {
   //   return byteArray;
   //   return decodeURIComponent(escape(window.atob(base64)));
 }
-document.querySelector(".uploadButton").addEventListener("click", (el) => {
-  el.preventDefault();
-});
+// document.querySelector(".uploadButton").addEventListener("click", (el) => {
+//   el.preventDefault();
+// });
 
 function uploadFiles() {
   //   const data = new FormData();
