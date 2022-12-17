@@ -40,7 +40,8 @@ function uploadFiles() {
         //     "multipart/form-data; boundary=<calculated when request is sent>",
         "Accept-Encoding": "gzip, deflate, br",
         Accept: "*/*",
-        "X-RapidAPI-Key": "2c8be93a48msh8a3e054ad37fb73p1d4f4bjsn7b1edb7b2798",
+        // "X-RapidAPI-Key": "2c8be93a48msh8a3e054ad37fb73p1d4f4bjsn7b1edb7b2798",
+        "X-RapidAPI-Key": "1209fd1450msh44e531e6c0e05fcp1179e8jsndaeb8a442e8b",
         "X-RapidAPI-Host": "pdf4me.p.rapidapi.com",
       },
       body: data,
@@ -54,6 +55,7 @@ function uploadFiles() {
       .then((response) => {
         const done = () => {
           console.log("oohoh");
+          console.log(response);
           var downloadedFile = base64ToArrayBuffer(response.file);
           console.log("hmm", downloadedFile);
           //   return;
